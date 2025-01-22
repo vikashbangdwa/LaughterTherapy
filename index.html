@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheer Up Neha!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f1f2f6, #dfe6e9); /* Neutral background */
+            margin: 0;
+            padding: 0;
+            color: #444;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #e17055;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            border-radius: 16px;
+        }
+
+        h1 {
+            color: #e17055;
+            font-size: 3em;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        .jokes-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .joke {
+            background-color: #f3f4f6;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+            max-width: 500px;
+            display: none;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .joke.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #e17055;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .button-container button:hover {
+            background-color: #d35400;
+        }
+
+        .song-container {
+            margin: 30px 0;
+            background-color: #ffeaa7;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .song-container a {
+            color: #e17055;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .song-container a:hover {
+            text-decoration: underline;
+        }
+
+        .memes {
+            margin-top: 40px;
+        }
+
+        .meme img {
+            max-width: 100%;
+            border-radius: 16px;
+            margin-top: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#jokes">Jokes</a>
+        <a href="#songs">Songs</a>
+        <a href="#memes">Memes</a>
+    </div>
+
+    <div class="container">
+        <h1>Hi Neha! 🌸</h1> <!-- Flower emoji in header -->
+        <p>Hey Neha, feeling a little under the weather? Here’s some sunshine to brighten your day! ☀️</p>
+        <p>Enjoy these modern jokes and have a laugh:</p>
+
+        <div class="jokes-container" id="jokes">
+            <div class="joke active">
+                Why don’t skeletons fight each other? <br><b>Because they don’t have the guts!</b>
+            </div>
+
+            <div class="joke">
+                Why did the scarecrow win an award? <br><b>Because he was outstanding in his field!</b>
+            </div>
+
+            <div class="joke">
+                I told my wife she should embrace her mistakes. <br><b>She gave me a hug.</b>
+            </div>
+
+            <div class="joke">
+                What do you call fake spaghetti? <br><b>An impasta!</b>
+            </div>
+
+            <div class="joke">
+                Why don’t eggs tell jokes? <br><b>Because they might crack up!</b>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button onclick="showNextJoke()">Next Joke</button>
+        </div>
+
+        <p id="songs">And here’s a song to lift your mood: 🎵</p>
+
+        <div class="song-container">
+            <!-- Embedded Spotify player -->
+            <iframe src="https://open.spotify.com/embed/track/4HceynRFeONXIHTq4X1q2N" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+        <p>Finally, some memes to keep the laughs rolling:</p>
+        <div class="memes" id="memes">
+            <div class="meme">
+                <img src="https://i.pinimg.com/originals/c4/80/c1/c480c156b5a24ff90cd7b84e5b47fe07.jpg" alt="Feeling on Monday">
+            </div>
+            <div class="meme">
+                <img src="https://i.pinimg.com/originals/3a/74/ba/3a74baf8a5a9b559fa0833580e95b464.jpg" alt="Feeling when things go wrong">
+            </div>
+        </div>
+
+        <p>Stay strong, Neha! Laughter is your secret weapon. 🌟</p>
+
+        <div class="footer">
+            <p>Created with love to brighten your day. 💕</p>
+        </div>
+    </div>
+
+    <script>
+        let currentJokeIndex = 0;
+        const jokes = document.querySelectorAll('.joke');
+        
+        function showNextJoke() {
+            jokes[currentJokeIndex].classList.remove('active');
+            currentJokeIndex = (currentJokeIndex + 1) % jokes.length;
+            jokes[currentJokeIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
